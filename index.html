@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolTreasure Hub | Free Online Tools</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- External Styles (MUST BE IN SAME FOLDER) -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- QRious (QR Code) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <!-- jsPDF (Image to PDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fa-solid fa-gem"></i> ToolTreasure<span>Hub</span>
+            </div>
+            
+            <div class="nav-wrapper">
+                <nav class="nav-menu" id="navMenu">
+                    <a href="#" onclick="location.reload()">Home</a>
+                    <a href="#tools-section">Tools</a>
+                    <a href="#" onclick="openModal('about')">About Us</a>
+                    <a href="https://wa.me/8801996813137" target="_blank" class="whatsapp-link"><i class="fa-brands fa-whatsapp"></i> Contact</a>
+                </nav>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="theme-btn" title="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <div class="hamburger" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <h1>The Ultimate <span class="highlight">Online Tool</span> Collection</h1>
+            <p>Calculators, Converters, Image Tools, and Productivity Utilities. Free, fast, and private.</p>
+            <a href="#tools-section" class="cta-btn">Start Using Tools</a>
+        </div>
+    </section>
+
+    <!-- TOOLS SECTION -->
+    <section id="tools-section" class="tools-section">
+        <div class="container">
+            <div class="layout-grid">
+                <!-- SIDEBAR CATEGORIES -->
+                <aside class="sidebar">
+                    <h3>Categories</h3>
+                    <div class="accordion-menu" id="accordionMenu">
+                        
+                        <!-- 1. Calculators -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-solid fa-calculator"></i> Calculators</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="calc-basic">Basic Calculator</button>
+                                <button class="tool-btn" data-tool="calc-sci">Scientific Calculator</button>
+                                <button class="tool-btn" data-tool="calc-bmi">BMI Calculator</button>
+                                <button class="tool-btn" data-tool="calc-age">Age Calculator</button>
+                                <button class="tool-btn" data-tool="calc-loan">Loan Calculator</button>
+                            </div>
+                        </div>
+
+                        <!-- 2. Converters -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-solid fa-arrow-right-arrow-left"></i> Converters</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="conv-curr">Currency Converter</button>
+                                <button class="tool-btn" data-tool="conv-len">Length Converter</button>
+                                <button class="tool-btn" data-tool="conv-wgt">Weight Converter</button>
+                                <button class="tool-btn" data-tool="conv-temp">Temperature</button>
+                            </div>
+                        </div>
+
+                        <!-- 3. Date & Time -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-regular fa-clock"></i> Date & Time</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="time-world">World Clock</button>
+                                <button class="tool-btn" data-tool="time-count">Countdown Timer</button>
+                                <button class="tool-btn" data-tool="time-sleep">Meditation Timer</button>
+                            </div>
+                        </div>
+
+                        <!-- 4. Generators -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-solid fa-wand-magic-sparkles"></i> Generators</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="gen-pass">Password Generator</button>
+                                <button class="tool-btn" data-tool="gen-qr">QR Code Generator</button>
+                                <button class="tool-btn" data-tool="gen-rnd">Random Number</button>
+                                <button class="tool-btn" data-tool="gen-lorem">Lorem Ipsum</button>
+                            </div>
+                        </div>
+
+                        <!-- 5. Text Tools -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-solid fa-font"></i> Text Tools</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="txt-count">Word Counter</button>
+                                <button class="tool-btn" data-tool="txt-rev">Reverse Text</button>
+                                <button class="tool-btn" data-tool="txt-case">Case Converter</button>
+                                <button class="tool-btn" data-tool="txt-minify">Minifier (JS/CSS)</button>
+                            </div>
+                        </div>
+
+                        <!-- 6. Image Tools -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-regular fa-image"></i> Image Tools</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="img-compress">Image Compressor</button>
+                                <button class="tool-btn" data-tool="img-resize">Image Resizer</button>
+                                <button class="tool-btn" data-tool="img-base64">Image to Base64</button>
+                                <button class="tool-btn" data-tool="img-pdf">Image to PDF</button>
+                            </div>
+                        </div>
+
+                        <!-- 7. Productivity -->
+                        <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-solid fa-list-check"></i> Productivity</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="prod-res">Screen Resolution</button>
+                                <button class="tool-btn" data-tool="prod-todo">Checklist</button>
+                                <button class="tool-btn" data-tool="prod-notes">Notepad</button>
+                                <button class="tool-btn" data-tool="prod-type">Typing Speed Test</button>
+                                <button class="tool-btn" data-tool="prod-pomo">Pomodoro Timer</button>
+                            </div>
+                        </div>
+
+                         <!-- 8. Fun Tools -->
+                         <div class="accordion-item">
+                            <button class="accordion-header"><i class="fa-regular fa-face-smile"></i> Fun Tools</button>
+                            <div class="accordion-body">
+                                <button class="tool-btn" data-tool="fun-joke">Random Joke</button>
+                                <button class="tool-btn" data-tool="fun-quote">Random Quote</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </aside>
+
+                <!-- MAIN TOOL WORKSPACE -->
+                <main class="workspace" id="workspace">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-toolbox"></i>
+                        <h2>Select a tool to start</h2>
+                        <p>Choose a category from the left menu.</p>
+                    </div>
+                    <!-- Dynamic Content Loads Here -->
+                    <div id="tool-container"></div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>ToolTreasure Hub</h4>
+                <p>The best free online tools collection. Fast, secure, and easy to use.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="openModal('about')">About Us</a>
+                <a href="#" onclick="openModal('privacy')">Privacy Policy</a>
+                <a href="https://wa.me/8801996813137" target="_blank">Contact via WhatsApp</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <p><i class="fa-brands fa-whatsapp"></i> +880 1996-813137</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ToolTreasure Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- MODALS (About & Privacy) -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Title</h2>
+            <div id="modal-body">Content</div>
+        </div>
+    </div>
+
+    <!-- Main Script (MUST BE IN SAME FOLDER) -->
+    <script src="script.js"></script>
+</body>
+</html>
